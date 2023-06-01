@@ -141,3 +141,8 @@ button:focus {
   background-repeat: no-repeat;
   height: 1000px;
 }
+small {
+  display: block;
+  margin-left: 270px;
+  margin-top: -8px;
+}
