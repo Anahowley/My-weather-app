@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>;
+    <title>Weather App</title>
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="weather-app">
+            <form class="search-form">
+                <div class="row">
+                    <div class="col-9">
+                        <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off"
+                            class="form-control shadow-sm" id="input-search" />
+
+                    </div>
+
+
+                    <div class="col-3">
+                        <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm"
+                            id="submit-form" /><br>
+
+                        <button>
+                            <div id="current-button"> </div>Current
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <h1>
+                <div class="city" id="city">
+                    Sydney NSW, Australia</div>
+            </h1>
+            <ul>
+                <li> <span class="dateandtime" id="dateandtime">
+                        <div class="currenttime" id="currenttime"> Wednesday <div class="time">22:00 </div>
+                    </span>
+                </li><br>
+                <li>
+                    <div id="weather-description">
+                        Partly Cloudy
+                    </div>
+                </li>
+            </ul>
+            <div class="row">
+                <div class="col-6">
+                    <div class="clearfix">
+
+                        <div class="float-left">
+                            <span class="temperature" id="main-temp">19°c </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <ul>
+
+                        </li>
+                        <li>
+                            <div id="humidity">
+                                Humidity: 77% </div>
+                        </li>
+                        <li>
+                            <div id="wind">
+                                Wind: 8 km/h </div>
+                        </li>
+                        <li>
+                            <div id="pressure">
+                                Pressure </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="src/index.js"></script>
+
+</body>
+
+</html>
