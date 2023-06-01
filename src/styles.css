@@ -131,3 +131,13 @@ button:focus {
 .weather-app {
   background-color: white;
 }
+
+.container {
+  padding-top: 100px;
+}
+
+#body {
+  background-image: url(/images/cloud-sky.jpg);
+  background-repeat: no-repeat;
+  height: 1000px;
+}
