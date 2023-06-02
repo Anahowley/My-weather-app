@@ -146,3 +146,14 @@ small {
   margin-left: 270px;
   margin-top: -8px;
 }
+
+#currenttime {
+  padding-top: 20px;
+}
+#weather-description {
+  padding-top: 10px;
+}
+
+#main-temp {
+  padding-top: 40px;
+}
