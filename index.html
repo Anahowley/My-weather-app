@@ -42,7 +42,7 @@
                 </h1>
                 <ul>
                     <li> <span class="dateandtime" id="dateandtime">
-                            <div class="currenttime" id="currenttime"> Wednesday <div class="time">22:00 </div>
+                            <div class="currenttime" Last id="currenttime"> Wednesday <div class="time">22:00 </div>
                         </span>
                     </li><br>
                     <li>
@@ -53,10 +53,12 @@
                 </ul>
                 <div class="row">
                     <div class="col-6">
-                        <div class="clearfix">
+                        <div class="clearfix weather temperature">
+                            <img src="http://openweathermap.org/img/wn/02n@2x.png" alt="few clouds" id="icon"
+                                class="float-left">
 
                             <div class="float-left">
-                                <span class="temperature" id="main-temp">19°c </span>
+                                <span class="temperature" id="main-temp">19°<div id="celcius">°C</div> </span>
                             </div>
                         </div>
                     </div>
@@ -72,10 +74,7 @@
                                 <div id="wind">
                                     Wind: 8 km/h </div>
                             </li>
-                            <li>
-                                <div id="pressure">
-                                    Pressure </div>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
