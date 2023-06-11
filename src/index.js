@@ -58,24 +58,23 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showMyTemp);
-
-  function showLocation(response) {
-    console.log(response);
-    let h1 = document.querySelector("h1");
-    h1.innerHTML = `${response.data.name} `;
-    let mainTempCurrent = document.querySelector("#main-temp");
-    mainTempCurrent.innerHTML = Math.round(response.data.main.temp) + `°`;
-  }
-  function openMyPosition(position) {
-    let lat = position.coords.latitude;
-    let lon = position.coords.longitude;
-    let apiKey2 = "99b8f9330a1bfba3a85e523fd3c2e528";
-    let apiUrl2 = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey2}&units=metric`;
-
-    axios.get(apiUrl2).then(showLocation);
-  }
-  let button = document.querySelector("#current-button");
-  button.addEventListener("click", openMyPosition);
-
-  navigator.geolocation.getCurrentPosition(openMyPosition);
 }
+function showLocation(response) {
+  console.log(response);
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = `${response.data.name} `;
+  let mainTempCurrent = document.querySelector("#main-temp");
+  mainTempCurrent.innerHTML = Math.round(response.data.main.temp) + `°`;
+}
+function openMyPosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey2 = "99b8f9330a1bfba3a85e523fd3c2e528";
+  let apiUrl2 = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey2}&units=metric`;
+
+  axios.get(apiUrl2).then(showLocation);
+}
+let button = document.querySelector("#current-button");
+button.addEventListener("click", openMyPosition);
+
+navigator.geolocation.getCurrentPosition(openMyPosition);
