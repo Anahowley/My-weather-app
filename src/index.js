@@ -35,6 +35,7 @@ function showMyTemp(response) {
   weatherDescription.innerHTML = `${response.data.weather[0].description}`;
   let city = document.querySelector("h1");
   city.innerHTML = response.data.name;
+  let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -61,9 +62,9 @@ function searchCity(city) {
   function showLocation(response) {
     console.log(response);
     let h1 = document.querySelector("h1");
-    h1.innerHTML = `Your current location is ${
-      response.data.name
-    } and your temperature is ${Math.round(response.data.main.temp)}°c`;
+    h1.innerHTML = `${response.data.name} `;
+    let mainTempCurrent = document.querySelector("#main-temp");
+    mainTempCurrent.innerHTML = Math.round(response.data.main.temp) + `°`;
   }
   function openMyPosition(position) {
     let lat = position.coords.latitude;
