@@ -66,6 +66,17 @@ function showLocation(response) {
   let mainTempCurrent = document.querySelector("#main-temp");
   mainTempCurrent.innerHTML = Math.round(response.data.main.temp) + `°`;
 }
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#main-temp");
+  let fahrenheiTemperature = (temperatureElement * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+}
+
+let fahrenheiTemperature = document.querySelector("#fahrenheit-link");
+fahrenheiTemperature.addEventListener("click", displayFahrenheitTemperature);
+
 function openMyPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
