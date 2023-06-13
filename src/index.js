@@ -24,6 +24,7 @@ dateAndTime.innerHTML = showDate();
 function showMyTemp(response) {
   console.log(response);
   let mainTemp = document.querySelector("#main-temp");
+  celsiusTemp = response.data.main.temp;
   mainTemp.innerHTML = Math.round(response.data.main.temp) + `°`;
   let windSpeed = document.querySelector("#wind");
   windSpeed.innerHTML = `Wind speed ${Math.round(
@@ -64,15 +65,18 @@ function showLocation(response) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${response.data.name} `;
   let mainTempCurrent = document.querySelector("#main-temp");
+  celsiusTemp = response.data.main.temp;
   mainTempCurrent.innerHTML = Math.round(response.data.main.temp) + `°`;
 }
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#main-temp");
-  let fahrenheiTemperature = (temperatureElement * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+  let fahrenheiTemperature = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature) + `°`;
 }
+
+let celsiusTemp = null;
 
 let fahrenheiTemperature = document.querySelector("#fahrenheit-link");
 fahrenheiTemperature.addEventListener("click", displayFahrenheitTemperature);

@@ -83,19 +83,10 @@ button:focus {
   padding-top: 100px;
 }
 
-small {
-  display: block;
-  margin-left: 270px;
-  margin-top: -8px;
-}
-
-#dateandtime {
-  padding-top: 30px;
-}
-
 #weather-description {
   margin-top: -25px;
   text-transform: capitalize;
+  font-size: 15px;
 }
 #celcius {
   font-size: 1px;
@@ -110,8 +101,14 @@ small {
   padding-left: 90px;
 }
 .units {
-  font-size: 14px;
+  position: static;
+  font-size: 15px;
+  margin-left: -5%;
+  color: #7c7c7c;
+}
+small {
   display: block;
-  padding-top: 74px;
-  margin-left: 76%;
+  text-align: center;
+  margin-top: -15px;
+  color: #7c7c7c;
 }
