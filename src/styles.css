@@ -126,3 +126,13 @@ small {
 .weather-forecast-temperatures {
   font-size: 13px;
 }
+
+#icon {
+  margin-top: -15px;
+}
+
+#forecast {
+  display: grid;
+  padding-top: 30px;
+  margin-left: -285px;
+}
