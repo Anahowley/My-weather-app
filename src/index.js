@@ -21,10 +21,11 @@ function showDate() {
 let dateAndTime = document.querySelector("#dateandtime");
 dateAndTime.innerHTML = showDate();
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response);
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let forecastHTML = `<div class="row">`;
   days.forEach(function (day) {
@@ -48,11 +49,16 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey3 = "cabdbda40038ba7d1165b953b1c7bd6c";
+  let apiUrl3 = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey3}&units=metric`;
+  axios.get(apiUrl3).then(displayForecast);
 }
 
 function showMyTemp(response) {
-  console.log(response);
   let mainTemp = document.querySelector("#main-temp");
   celsiusTemp = response.data.main.temp;
   mainTemp.innerHTML = Math.round(response.data.main.temp) + `°`;
@@ -73,7 +79,7 @@ function showMyTemp(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  openMyPosition(response.data.coord);
+  getForecast(response.data.coord);
 }
 
 let submitButton = document.querySelector("#submit-form");
@@ -91,7 +97,6 @@ function searchCity(city) {
   axios.get(apiUrl).then(showMyTemp);
 }
 function showLocation(response) {
-  console.log(response);
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${response.data.name} `;
   let mainTempCurrent = document.querySelector("#main-temp");
