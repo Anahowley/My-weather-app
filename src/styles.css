@@ -136,3 +136,11 @@ small {
   padding-top: 30px;
   margin-left: -275px;
 }
+@media (max-width: 768px) {
+  .col-md-9 {
+    width: 100%;
+  }
+  .weather-forecast-date {
+    margin-top: 80px;
+  }
+}
